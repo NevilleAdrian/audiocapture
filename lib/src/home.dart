@@ -21,7 +21,7 @@ class _EngagementWalletHomeState extends State<EngagementWalletHome> {
       child: ScreenUtilInit(
         designSize: Size(414, 896),
         builder: () => MaterialApp(
-          title: 'Audio Capture App',
+          title: 'Audio Capture',
           theme: myThemeData(context),
           home: const LoginScreen(),
           debugShowCheckedModeBanner: false,
