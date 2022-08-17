@@ -1,3 +1,6 @@
+import 'package:engagementwallet/recording_sent.dart';
+import 'package:engagementwallet/src/ui/app_layout/home/todo_card/iconContainer/icon_container.dart';
+import 'package:engagementwallet/src/ui/app_layout/home/todo_card/todo_card.dart';
 import 'package:engagementwallet/src/ui/app_layout/home/top_up/top_up.dart';
 import 'package:engagementwallet/src/ui/app_layout/home/transfer/make_transfer.dart';
 import 'package:engagementwallet/src/ui/app_layout/home/withdraw/withdraw_balance.dart';
@@ -28,6 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       // appBar: const TopNavBar(),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -78,15 +82,323 @@ class _HomeScreenState extends State<HomeScreen> {
                           Container(color: greyColor, width: 0.6, height: 50,),
                           kSmallWidth,
                           Points(),
-
                         ],
                       ),
 
                     ),
+                    SizedBox(height: 20,),
+
+                    Container(
+                      padding: const EdgeInsets.symmetric(
+                        vertical: 6,
+                        horizontal: 30,
+                      ),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: darkOrangeColor.withOpacity(0.15),
+                      ),
+                      child: Text('Convert Points',
+                      style: TextStyle(
+                        color: orangeColor,
+                        fontSize: 12
+                      ),
+                      ),
+                    ),
+
+                    SizedBox(height: 40,),
+
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('Todo'),
+                      ],
+                    ),
+                    SizedBox(height: 20,),
+
+                    InkWell(
+                      onTap: (){
+                        showDialog(context: context, builder: (context){
+                          return AlertDialog(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15),
+                            ),
+                            backgroundColor: accentColor,
+                            title: const Center(
+                              child: Text('Read out loud',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 17,
+                                ),
+                              ),
+                            ),
+                            content: Wrap(
+                              children: [
+                                Container(
+                                  margin: EdgeInsets.symmetric(vertical: 20),
+                                  padding: EdgeInsets.symmetric(vertical: 20, horizontal: 100),
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(15),
+                                    color: Colors.white,
+                                  ),
+                                  child: Text('UJAH',
+                                    style: Theme.of(context).textTheme.headline4!.copyWith(color: Colors.black, fontWeight: FontWeight.bold),),
+                                ),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    RichText(text: const TextSpan(
+                                      children: [
+                                        TextSpan(
+                                          text: 'Time left:', style: TextStyle(color: Colors.black),
+                                        ),
+                                        TextSpan(
+                                          text: ' 03:45', style: TextStyle(color: Colors.red),
+                                        ),
+                                      ]
+                                    ),
+                                    ),
+                                  ],
+                                ),
+                                SizedBox(height: 100,),
+                                Center(
+                                  child: Column(
+                                    children:  [
+                                      Padding(
+                                        padding: EdgeInsets.only(left: 15.0, bottom: 10),
+                                        child: InkWell(
+                                            onTap: (){
+                                              showDialog(context: context, builder: (context){
+                                                return AlertDialog(
+                                                  shape: RoundedRectangleBorder(
+                                                    borderRadius: BorderRadius.circular(15),
+                                                  ),
+                                                  backgroundColor: accentColor,
+                                                  title: const Center(
+                                                    child: Text('Read out loud',
+                                                      style: TextStyle(
+                                                        fontWeight: FontWeight.bold,
+                                                        fontSize: 17,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  content: Wrap(
+                                                    children: [
+                                                      Container(
+                                                        margin: EdgeInsets.symmetric(vertical: 20),
+                                                        padding: EdgeInsets.symmetric(vertical: 20, horizontal: 100),
+                                                        decoration: BoxDecoration(
+                                                          borderRadius: BorderRadius.circular(15),
+                                                          color: Colors.white,
+                                                        ),
+                                                        child: Text('UJAH',
+                                                          style: Theme.of(context).textTheme.headline4!.copyWith(color: Colors.black, fontWeight: FontWeight.bold),),
+                                                      ),
+                                                      Row(
+                                                        mainAxisAlignment: MainAxisAlignment.center,
+                                                        children: [
+                                                          RichText(text: const TextSpan(
+                                                              children: [
+                                                                TextSpan(
+                                                                  text: 'Time left:', style: TextStyle(color: Colors.black),
+                                                                ),
+                                                                TextSpan(
+                                                                  text: ' 03:45', style: TextStyle(color: Colors.red),
+                                                                ),
+                                                              ]
+                                                          ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                      SizedBox(height: 50,),
+                                                      Center(
+                                                        child: Icon(Icons.multitrack_audio_outlined,
+                                                        size: 50,
+                                                        color: orangeColor,),
+                                                      ),
+                                                      SizedBox(height: 70,),
+                                                      Center(
+                                                        child: Column(
+                                                          children: [
+                                                            Padding(
+                                                              padding: EdgeInsets.only(left: 15.0, bottom: 10),
+                                                              child: InkWell(
+                                                                  onTap: (){
+                                                                    showDialog(context: context, builder: (context){
+                                                                      return AlertDialog(
+                                                                        shape: RoundedRectangleBorder(
+                                                                          borderRadius: BorderRadius.circular(15),
+                                                                        ),
+                                                                        backgroundColor: accentColor,
+                                                                        title: const Center(
+                                                                          child: Text('Read out loud',
+                                                                            style: TextStyle(
+                                                                              fontWeight: FontWeight.bold,
+                                                                              fontSize: 17,
+                                                                            ),
+                                                                          ),
+                                                                        ),
+                                                                        content: Wrap(
+                                                                          children: [
+                                                                            Container(
+                                                                              margin: EdgeInsets.symmetric(vertical: 20),
+                                                                              padding: EdgeInsets.symmetric(vertical: 20, horizontal: 100),
+                                                                              decoration: BoxDecoration(
+                                                                                borderRadius: BorderRadius.circular(15),
+                                                                                color: Colors.white,
+                                                                              ),
+                                                                              child: Text('UJAH',
+                                                                                style: Theme.of(context).textTheme.headline4!.copyWith(color: Colors.black, fontWeight: FontWeight.bold),),
+                                                                            ),
+                                                                            Row(
+                                                                              mainAxisAlignment: MainAxisAlignment.center,
+                                                                              children: [
+                                                                                RichText(text: const TextSpan(
+                                                                                    children: [
+                                                                                      TextSpan(
+                                                                                        text: 'Time left:', style: TextStyle(color: Colors.black),
+                                                                                      ),
+                                                                                      TextSpan(
+                                                                                        text: ' 03:45', style: TextStyle(color: Colors.red),
+                                                                                      ),
+                                                                                    ]
+                                                                                ),
+                                                                                ),
+                                                                              ],
+                                                                            ),
+                                                                            SizedBox(height: 50,),
+                                                                            Center(
+                                                                              child: Icon(Icons.multitrack_audio_outlined,
+                                                                                size: 50,
+                                                                                color: orangeColor,),
+                                                                            ),
+                                                                            SizedBox(height: 100,),
+
+                                                                            Row(
+                                                                              children: [
+                                                                                Column(
+                                                                                  children: [
+                                                                                    Icon(Icons.mic,
+                                                                                    color: Colors.black,),
+                                                                                    SizedBox(height: 5,),
+                                                                                    Text('Record again',
+                                                                                    style: TextStyle(
+                                                                                      color: darkGreyColor,
+                                                                                      fontSize: 13,
+                                                                                    ),),
+                                                                                  ],
+                                                                                ),
+                                                                                SizedBox(width: 10,),
+                                                                                Container(
+                                                                                  width: 1,
+                                                                                  height: 60,
+                                                                                  color: Colors.grey[400],
+                                                                                ),
+                                                                                SizedBox(width: 40,),
+                                                                                Column(
+                                                                                  children: [
+                                                                                    Icon(Icons.play_circle_fill_rounded,
+                                                                                      color: Colors.black,),
+                                                                                    SizedBox(height: 5,),
+                                                                                    Text('Play',
+                                                                                      style: TextStyle(
+                                                                                        color: darkGreyColor,
+                                                                                        fontSize: 13,
+                                                                                      ),),
+                                                                                  ],
+                                                                                ),
+                                                                                SizedBox(width: 40,),
+                                                                                Container(
+                                                                                  width: 1,
+                                                                                  height: 60,
+                                                                                  color: Colors.grey[400],
+                                                                                ),
+                                                                                SizedBox(width: 30,),
+                                                                                Column(
+                                                                                  children: [
+                                                                                    InkWell(
+                                                                                      onTap: (){
+                                                                                        Navigator.push(context, MaterialPageRoute(builder: (context) => RecordingSent(),),);
+                                                                                      },
+                                                                                      child: Icon(Icons.send,
+                                                                                        color: orangeColor,),
+                                                                                    ),
+                                                                                    SizedBox(height: 5,),
+                                                                                    Text('Submit',
+                                                                                      style: TextStyle(
+                                                                                        color: orangeColor,
+                                                                                        fontSize: 13,
+                                                                                      ),),
+                                                                                  ],
+                                                                                ),
+                                                                                SizedBox(width: 10,),
+                                                                              ],
+                                                                            )
+                                                                          ],
+                                                                        ),
+                                                                      );
+                                                                    });
+                                                                  },
+                                                                  child: IconContainer(icon: Icons.stop_circle, color: orangeColor, containerColor: Colors.white,)),
+                                                            ),
+                                                            Text('Click to stop',
+                                                              style: TextStyle(
+                                                                fontSize: 13,
+                                                              ),),
+                                                          ],
+                                                        ),
+                                                      )
+                                                    ],
+                                                  ),
+                                                );
+                                              });
+                                            },
+                                            child: IconContainer(icon: Icons.mic, color: Colors.white, containerColor: orangeColor,),),
+                                      ),
+                                      Text('Click to start',
+                                      style: TextStyle(
+                                        fontSize: 13,
+                                      ),),
+                                    ],
+                                  ),
+                                )
+                              ],
+                            ),
+                          );
+                        });
+
+                      },
+                      child:  TodoCard(text: 'Record     ', icon: Icons.mic,),),
+                    SizedBox(height: 10,),
+                    TodoCard(text: 'Annotate', icon: Icons.mic,),
+                    SizedBox(height: 10,),
+                    TodoCard(text: 'Translate', icon: Icons.mic,),
+                    
+                    SizedBox(height: 90,),
+                    
+                    TextButton(onPressed: (){},
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text('Share Your Progress',
+                        style: TextStyle(
+                          color: orangeColor,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16
+                        ),
+                        ),
+                        SizedBox(width: 5,),
+                        Icon(Icons.share_outlined,
+                        color: orangeColor,
+                        size: 25,)
+                      ],
+                    ))
+
+
+
 
                     // CustomButton(
-                    //     text: "CONTINUE",
-                    //     color: secondaryColor.withOpacity(0.),
+                    //     text: "Convert Points",
+                    //     color: accentColor.withOpacity(0.2),
                     //     loader: false,
                     //     onPressed: ()  {
                     //
@@ -103,6 +415,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
+
 
 class Points extends StatelessWidget {
   const Points({
@@ -124,6 +437,30 @@ class Points extends StatelessWidget {
     );
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 class TopNavBar extends StatelessWidget implements PreferredSizeWidget{
   const TopNavBar({
@@ -262,3 +599,5 @@ class TransferBox extends StatelessWidget {
     );
   }
 }
+
+

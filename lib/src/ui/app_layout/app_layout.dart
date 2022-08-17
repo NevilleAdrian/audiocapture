@@ -1,7 +1,9 @@
 import 'package:engagementwallet/src/logic/mixin/page_controller_mixin.dart';
 import 'package:engagementwallet/src/ui/app_layout/home/home.dart';
+import 'package:engagementwallet/src/ui/app_layout/leaderboard/leader_board.dart';
 import 'package:engagementwallet/src/ui/app_layout/more/more.dart';
 import 'package:engagementwallet/src/ui/app_layout/reward/reward.dart';
+import 'package:engagementwallet/src/ui/app_layout/settings/settings.dart';
 import 'package:engagementwallet/src/ui/app_layout/shop/add_to_cart.dart';
 import 'package:engagementwallet/src/ui/app_layout/shop/shop.dart';
 import 'package:engagementwallet/src/utils/colors.dart';
@@ -27,8 +29,8 @@ class _AppLayoutState extends State<AppLayout> {
   final List<Widget> _screens = [
     const HomeScreen(),
     // const AddToCart(),
-    // const RewardScreen(),
-    // const MoreScreen(),
+    const LeaderBoardScreen(),
+    const SettingsScreen(),
   ];
 
   void _onPageChanged(int index) {
