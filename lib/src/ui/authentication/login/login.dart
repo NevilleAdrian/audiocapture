@@ -102,17 +102,16 @@ class _LoginScreenState extends State<LoginScreen> {
           CustomButton(
               text: "LOGIN",
               loader: AuthMixin.auth(context, listen: true).isLoading,
-              onPressed: () async {
-                await AuthMixin.auth(context).loginUser(
-                    emailController.text,
-                    passwordController.text,
-                    context
-                );
-              }),
-
+              onPressed: () => navigate(
+                    context,
+                    const AppLayout(),
+                  )),
           kSmallHeight,
           Center(
-            child: SvgPicture.asset(Assets.faceId, color: secondaryColor,),
+            child: SvgPicture.asset(
+              Assets.faceId,
+              color: secondaryColor,
+            ),
           ),
           kSmallHeight,
           Center(

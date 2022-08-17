@@ -1,13 +1,24 @@
+import 'package:engagementwallet/src/ui/app_layout/more/profile_settings/profile_settings.dart';
+import 'package:engagementwallet/src/ui/app_layout/more/security_settings/password_settings.dart';
+import 'package:engagementwallet/src/ui/app_layout/more/security_settings/security_settings.dart';
 import 'package:engagementwallet/src/utils/colors.dart';
+import 'package:engagementwallet/src/widgets/dialogs/dialogs.dart';
 import 'package:engagementwallet/src/widgets/forms/registration_form.dart';
 import 'package:flutter/material.dart';
 
 
-class SettingsScreen extends StatelessWidget {
+class SettingsScreen extends StatefulWidget {
   const SettingsScreen({Key? key}) : super(key: key);
 
   @override
+  State<SettingsScreen> createState() => _SettingsScreenState();
+}
+
+class _SettingsScreenState extends State<SettingsScreen> {
+  @override
   Widget build(BuildContext context) {
+    TextEditingController passwordController = TextEditingController();
+    TextEditingController newPasswordController = TextEditingController();
     return SafeArea(
       child: Scaffold(
         body: Padding(
@@ -33,7 +44,7 @@ class SettingsScreen extends StatelessWidget {
               ),
               SizedBox(height: 15,),
               InkWell(
-                onTap: (){},
+                onTap: () => openDialog(context, const ProfileSettings()),
                 child: Row(
                   children: [
                     Expanded(
@@ -79,10 +90,15 @@ class SettingsScreen extends StatelessWidget {
               SizedBox(height: 20,),
               Row(
                 children: [
-                  TextButton(onPressed: (){}, child:
+                  TextButton(onPressed: () =>  openDialog(
+                      context,
+                      PasswordSettings(
+                        passwordController: passwordController,
+                        newPasswordController: newPasswordController,
+                      )), child:
                   Row(
                     children: [
-                      Text('Security Settigs',
+                      Text('Security Settings',
                       style: TextStyle(
                         fontSize: 15,
                         fontWeight: FontWeight.bold,

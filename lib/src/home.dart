@@ -6,14 +6,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 
-class EngagementWalletHome extends StatefulWidget {
-  const EngagementWalletHome({Key? key}) : super(key: key);
+class AudioCaptureHome extends StatefulWidget {
+  const AudioCaptureHome({Key? key}) : super(key: key);
 
   @override
-  State<EngagementWalletHome> createState() => _EngagementWalletHomeState();
+  State<AudioCaptureHome> createState() => _AudioCaptureHomeState();
 }
 
-class _EngagementWalletHomeState extends State<EngagementWalletHome> {
+class _AudioCaptureHomeState extends State<AudioCaptureHome> {
   @override
   Widget build(BuildContext context) {
     return  MultiProvider(
@@ -23,7 +23,7 @@ class _EngagementWalletHomeState extends State<EngagementWalletHome> {
         builder: () => MaterialApp(
           title: 'Audio Capture',
           theme: myThemeData(context),
-          home: const LoginScreen(),
+          home: const SplashScreen(),
           debugShowCheckedModeBanner: false,
         ),
       ),

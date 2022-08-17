@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 
-class EngagagementWalletApp extends StatefulWidget {
-  const EngagagementWalletApp(
+class AudioCaptureApp extends StatefulWidget {
+  const AudioCaptureApp(
       {Key? key, required this.child}
 
   ) : super(key: key);
 
   final Widget child;
   @override
-  State<EngagagementWalletApp> createState() => _EngagagementWalletAppState();
+  State<AudioCaptureApp> createState() => _AudioCaptureAppState();
 }
 
-class _EngagagementWalletAppState extends State<EngagagementWalletApp> {
+class _AudioCaptureAppState extends State<AudioCaptureApp> {
   @override
   Widget build(BuildContext context) {
     return widget.child;

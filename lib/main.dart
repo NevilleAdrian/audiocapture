@@ -3,8 +3,8 @@ import 'package:engagementwallet/src/home.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const EngagagementWalletApp(
-    child: EngagementWalletHome(),
+  runApp(const AudioCaptureApp(
+    child: AudioCaptureHome(),
   ));
 }
 
